@@ -4,12 +4,12 @@
 
 library(raster)
 
-# setwd("/Volumes/TRANSCEND 1/Climatic_data/cru_ts_3.24.01 2/pre") # load my storage
-# qq<-raster("cru_ts3.24.01.1901.2015.pre.dat.nc")    #讀cru的雨量資料(wrong way, 這個指令只能讀一層)
-# qq<-brick("cru_ts3.24.01.1901.2015.pre.dat.nc")     #讀cru的雨量資料(可以讀多層)
-# setwd("/Volumes/Transcend/Teaching/R_GIS/R_GIS")    # load my working space
-# rr<-crop(qq, extent(115,125,20,30))                 #把台灣的資料切出來
-# writeRaster(rr,"cru_pre_tw.tif","GTiff")            #輸出成新的GeoTiff檔
+setwd("/Volumes/TRANSCEND 1/Climatic_data/cru_ts_3.24.01 2/pre") # load my storage
+qq<-raster("cru_ts3.24.01.1901.2015.pre.dat.nc")    #讀cru的雨量資料(wrong way, 這個指令只能讀一層)
+qq<-brick("cru_ts3.24.01.1901.2015.pre.dat.nc")     #讀cru的雨量資料(可以讀多層)
+setwd("/Volumes/Transcend/Teaching/R_GIS/R_GIS")    # load my working space
+rr<-crop(qq, extent(115,125,20,30))                 #把台灣的資料切出來
+writeRaster(rr,"cru_pre_tw.tif","GTiff")            #輸出成新的GeoTiff檔
 
 my.raster<-raster("C:/Users/farewell/Downloads/R_GIS/R_GIS/cru_pre_tw.tif")   #讀資料(只讀了一層)
 my.raster<-brick("C:/Users/farewell/Downloads/R_GIS/R_GIS/cru_pre_tw.tif")    #讀資料(讀很多層)
